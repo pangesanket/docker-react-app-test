@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  react-app:
+    container_name: react-app-container
+    image: amolnandivale/react-app:1.2
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app
+      
+    command:  serve -s dist -l 3000
